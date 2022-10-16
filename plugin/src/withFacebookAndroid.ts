@@ -219,10 +219,6 @@ export function setFacebookConfig(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let mainApplication = getMainApplicationOrThrow(androidManifest);
 
-  if (scheme && !hasScheme(scheme, androidManifest)) {
-    androidManifest = appendScheme(scheme, androidManifest);
-  }
-
   mainApplication = ensureFacebookActivity({scheme, mainApplication});
 
   if (appID) {
