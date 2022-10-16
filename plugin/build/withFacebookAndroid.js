@@ -140,9 +140,7 @@ function setFacebookConfig(props, androidManifest) {
     const advertiserIdCollection = (0, config_1.getFacebookAdvertiserIDCollection)(props);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let mainApplication = getMainApplicationOrThrow(androidManifest);
-    if (scheme && !(0, Scheme_1.hasScheme)(scheme, androidManifest)) {
-        androidManifest = (0, Scheme_1.appendScheme)(scheme, androidManifest);
-    }
+
     mainApplication = ensureFacebookActivity({ scheme, mainApplication });
     if (appID) {
         mainApplication = addMetaDataItemToMainApplication(mainApplication, META_APP_ID, `@string/${STRING_FACEBOOK_APP_ID}`);
