@@ -295,7 +295,7 @@ Settings.initializeSDK();
 If you would like to initialize the Facebook SDK even earlier in startup for iOS, you need to include this code in your AppDelegate.m file now that auto-initialization is removed.
 
 ```objective-c
-#import <FBSDKCoreKit/FBSDKCoreKit.h> // <- Add This Import
+#import <FBSDKCoreKit/FBSDKCoreKit-swift.h> // <- Add This Import
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -647,7 +647,7 @@ The DeepLink URL from the re-engagement ads should be passed to the AEM Kit even
 
 // apply codes below to `application:openURL:options:` 
 // in `AppDelegate.m` or `SceneDelegate.m`
-[FBAEMReporter configureWithNetworker:nil appID:@"{app-id}" reporter nil]; // Replace {app-id} with your Facebook App id
+[FBAEMReporter configureWithNetworker:nil appID:@"{app-id}" reporter:nil]; // Replace {app-id} with your Facebook App id
 [FBAEMReporter enable];
 [FBAEMReporter handleURL:url];
 ```
